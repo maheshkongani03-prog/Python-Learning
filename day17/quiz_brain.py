@@ -1,0 +1,31 @@
+class QuizBrain:
+
+    def __init__(self,q_list):
+        self.question_number=0
+        self.question_list=q_list
+        self.score=0
+    def still_has_questions(self):
+         return self.question_number<len(self.question_list)
+
+    def check_answer(self,u_Answer,Question):
+        correct_answer=Question.answer
+        if u_Answer.lower()==correct_answer.lower():
+            self.score+=1
+            print("That's Correct.")
+            print(f"The Correct Answer is:{correct_answer}, your Current Scoreis {self.score}")   
+            
+        else:
+            print("That's Wrong!!!.")
+            print(f"The Correct Answer is:{correct_answer}, your Current Scoreis {self.score}") 
+        print("\n")
+
+        
+    def next_question(self):
+        current_question=self.question_list[self.question_number]
+        self.question_number+=1
+        User_Answer=input(f"Q.{self.question_number}: {current_question.text} True/False:")
+        self.check_answer(User_Answer,current_question)
+        
+
+
+

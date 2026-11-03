@@ -1,0 +1,14 @@
+# Ignore all files by default
+*
+
+# Keep directories searchable for Python files
+!*/
+
+# Keep Python source files and this rules file
+!*.py
+!.gitignore
+
+# Exclude environments and Python caches
+.venv/
+venv/
+__pycache__/
